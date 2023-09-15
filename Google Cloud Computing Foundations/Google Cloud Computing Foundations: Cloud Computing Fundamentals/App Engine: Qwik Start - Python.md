@@ -12,7 +12,7 @@ gcloud app deploy
 ```
 # When it will ask for region then go to task 5 step 2 instructions and properly write that no in google console
 
-
+```cmd
 [1] asia-east1    (supports standard and flexible)
  [2] asia-northeast1 (supports standard and flexible and search_api)
  [3] asia-south1   (supports standard and flexible and search_api)
@@ -30,5 +30,6 @@ gcloud app deploy
  [15] us-west3      (supports standard and flexible and search_api)
  [16] us-west4      (supports standard and flexible and search_api)
  [17] cancel
+```
 
  # For eg if your region is us-east1 then type 11
