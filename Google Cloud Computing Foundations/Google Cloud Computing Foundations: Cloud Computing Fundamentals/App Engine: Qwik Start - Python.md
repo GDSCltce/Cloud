@@ -11,6 +11,7 @@ sed -i 's/Hello World!/Hello, Cruel World!/g' main.py
 gcloud app deploy
 ```
 # When it will ask for region then go to task 5 step 2 instructions and properly write that no in google console
+# After writing the relevant no of region type y when they ask for continue
 
 ```cmd
 [1] asia-east1    (supports standard and flexible)
