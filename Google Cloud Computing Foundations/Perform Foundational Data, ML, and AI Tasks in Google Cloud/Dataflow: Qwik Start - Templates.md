@@ -29,3 +29,7 @@ gcloud dataflow jobs run iotflow \
 --staging-location gs://$DEVSHELL_PROJECT_ID/temp \
 --parameters inputTopic=projects/pubsub-public-data/topics/taxirides-realtime,outputTableSpec=$DEVSHELL_PROJECT_ID:taxirides.realtime
 ```
+
+
+# check my progress you will get 100/100
+## Hurray you are done with the lab
