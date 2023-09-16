@@ -32,3 +32,6 @@ cat details.json
 ### Fill the blanks from the Terminal > SAVE AND CONTINUE >SAVE AND CONTINUE > BACK TO DASHBOARD
 ### Reload the previous page > Turn on App Engine app > Check the box > ADD PRINCIPAL 
 ### "USERNAME" > Role= `IAP-Secured Web App User` > SAVE
+
+# check my progress you will get 100/100
+## Hurray you are done with the lab
