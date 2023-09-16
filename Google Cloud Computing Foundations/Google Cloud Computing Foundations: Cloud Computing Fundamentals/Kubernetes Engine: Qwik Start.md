@@ -17,6 +17,12 @@ gcloud container clusters get-credentials lab-cluster
 kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
 kubectl expose deployment hello-server --type=LoadBalancer --port 8080
 ```
+wait for this command to run it will take time
+
+```cmd
+gcloud container clusters delete lab-cluster
+```
+Type Y when it ask for do you want to continue and press enter
 
 # check my progress you will get 100/100
 ## Hurray you are done with the lab
