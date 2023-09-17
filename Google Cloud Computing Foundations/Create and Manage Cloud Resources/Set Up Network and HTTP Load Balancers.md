@@ -118,5 +118,6 @@ gcloud compute forwarding-rules create http-content-rule \
     --target-http-proxy=http-lb-proxy \
     --ports=80 
 ```
+# It will take time to run be patient
 # check my progress you will get 100/100
 ## Hurray you are done with the lab
