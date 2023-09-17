@@ -1,0 +1,84 @@
+# Click on start lab
+# Right click on google coud console and open it in incognito window
+# Sign in the google cloud console with the credential provided in the lab
+# Run this command by activating the cloud shell
+
+```cmd
+export ZONE=
+```
+Copy zone from task 2 instruction
+```cmd
+export INSTANCE_NAME=
+```
+Copy instance name from task 1 instruction
+```cmd
+export PORT=
+```
+Copy port from task 2 instruction
+```cmd
+export FIREWALL_NAME=
+```
+Copy firewall name from task 3 instruction
+```cmd
+export REGION=${ZONE::-2}
+gcloud compute instances create $INSTANCE_NAME \
+--zone $ZONE \
+--machine-type e2-micro \
+--network nucleus-vpc \
+--image-family debian-10 \
+--image-project debian-cloud
+gcloud container clusters create nucleus-backend \
+--num-nodes 1 \
+--network nucleus-vpc \
+--zone $ZONE
+kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:2.0
+kubectl expose deployment hello-server \
+--type=LoadBalancer \
+--port $PORT
+cat > startup.sh << EOF
+#! /bin/bash
+apt-get update
+apt-get install -y nginx
+service nginx start
+sed -i -- 's/nginx/Google Cloud Platform - '"\$HOSTNAME"'/' /var/www/html/index.nginx-debian.html
+EOF
+gcloud compute instance-templates create web-server-template --region $REGION \
+--metadata-from-file startup-script=startup.sh \
+--network nucleus-vpc \
+--machine-type e2-micro
+gcloud compute target-pools create nginx-pool --region=$REGION
+gcloud compute instance-groups managed create web-server-group --region $REGION \
+--base-instance-name web-server \
+--size 2 \
+--template web-server-template
+gcloud compute firewall-rules create $FIREWALL_NAME \
+--allow tcp:80 \
+--network nucleus-vpc
+gcloud compute http-health-checks create http-basic-check
+gcloud compute instance-groups managed \
+set-named-ports web-server-group \
+--named-ports http:80 \
+--region $REGION
+gcloud compute backend-services create web-server-backend \
+--protocol HTTP \
+--http-health-checks http-basic-check \
+--global
+gcloud compute backend-services add-backend web-server-backend \
+--instance-group web-server-group \
+--instance-group-region $REGION \
+--global
+gcloud compute url-maps create web-server-map \
+--default-service web-server-backend
+gcloud compute target-http-proxies create http-lb-proxy \
+--url-map web-server-map
+gcloud compute forwarding-rules create http-content-rule \
+--global \
+--target-http-proxy http-lb-proxy \
+--ports 80
+gcloud compute forwarding-rules create $FIREWALL_NAME \
+--global \
+--target-http-proxy http-lb-proxy \
+--ports 80
+```
+# check my progress you will get 100/100
+## Hurray you are done with the lab
