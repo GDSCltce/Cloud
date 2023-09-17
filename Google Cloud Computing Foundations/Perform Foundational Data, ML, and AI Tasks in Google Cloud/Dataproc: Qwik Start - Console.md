@@ -27,5 +27,6 @@ gcloud dataproc clusters update example-cluster \
 --num-workers=4 \
 --region=$REGION
 ```
+It will take time to run please be patient
 # check my progress you will get 100/100
 ## Hurray you are done with the lab
