@@ -1,7 +1,7 @@
 # Click on start lab
 # Right click on google coud console and open it in incognito window
 # Sign in the google cloud console with the credential provided in the lab
-### APIs & Services > APIs & Services > `Vertex AI API` > Enabl
+### APIs & Services > APIs & Services > `Vertex AI API` > Enable
 # Run this command by activating the cloud shell
 ```cmd
 MODEL_ID="text-bison"
