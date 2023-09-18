@@ -9,6 +9,7 @@ SSH_IAP_Network_tag=
 ```cmd
 SSH_Internal_Network_tag=
 ```
+# copy this from your challenge step 4 instruction
 ```cmd
 HTTP_Network_Tag=
 ```
