@@ -30,6 +30,7 @@ curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
 sudo bash add-google-cloud-ops-agent-repo.sh --also-install
 sudo apt-get update
 ```
+# Type Y when it ask for do you want to continue
 ## Now do 3 and 4 task manually
 # check my progress you will get 100/100
 ## Hurray you are done with the lab
