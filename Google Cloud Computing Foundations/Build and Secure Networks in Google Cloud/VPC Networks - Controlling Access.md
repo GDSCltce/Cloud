@@ -5,6 +5,7 @@
 ```cmd
 export ZONE=
 ```
+Copy the zone from task 1 step 3 table
 ```cmd
 export PROJECT_ID=$(gcloud config get-value project)
 gcloud compute instances create blue \
