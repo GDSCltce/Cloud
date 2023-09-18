@@ -269,6 +269,7 @@ curl -X PATCH -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "C
 export RULE_IP=$(gcloud compute forwarding-rules describe http-lb-forwarding-rule --global --format="value(IPAddress)")
 gcloud compute ssh --zone "$VM_ZONE" "siege-vm"
 ```
+# Press y and three time enter when they ask do we want to continue
 ```cmd
 sudo apt-get -y install siege
 ```
