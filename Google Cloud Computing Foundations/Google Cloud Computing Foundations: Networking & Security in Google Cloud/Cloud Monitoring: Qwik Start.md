@@ -21,6 +21,7 @@ gcloud compute firewall-rules create allow-http \
 --target-tags=http-server
 gcloud compute ssh lamp-1-vm --zone=$ZONE
 ```
+# Type Y and press three times enter when the lab show do you want to continue
 ```cmd
 sudo apt-get update
 sudo apt-get install apache2 php7.0
