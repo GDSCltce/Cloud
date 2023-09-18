@@ -2,6 +2,7 @@
 # Right click on google coud console and open it in incognito window
 # Sign in the google cloud console with the credential provided in the lab
 # Run this command by activating the cloud shell
+# This all things is provided in left side where your credential is present for login
 ```cmd
 SSH_IAP_Network_tag=
 ```
