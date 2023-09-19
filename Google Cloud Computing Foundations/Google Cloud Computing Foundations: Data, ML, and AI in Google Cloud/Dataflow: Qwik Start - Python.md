@@ -23,5 +23,6 @@ python -m apache_beam.examples.wordcount --project $DEVSHELL_PROJECT_ID \
   --region $REGION
 '
 ```
+# It will take time to run the pipeline be patient
 # check my progress you will get 100/100
 ## Hurray you are done with the lab
