@@ -2,17 +2,18 @@
 # Right click on google coud console and open it in incognito window
 # Sign in the google cloud console with the credential provided in the lab
 # Run this command by activating the cloud shell
-# This all things is provided in left side where your credential is present for login
 ```cmd
 SSH_IAP_Network_tag=
 ```
+Copy this from login side instructions
 ```cmd
 SSH_Internal_Network_tag=
 ```
-# copy this from your challenge step 4 instruction
+Copy this from login side instructions
 ```cmd
 HTTP_Network_Tag=
 ```
+Copy this from login side instructions
 ### Search ```Vm instance``` > Copy the Zone 
 ```cmd
 ZONE=
@@ -50,6 +51,8 @@ gcloud compute ssh bastion --zone=$ZONE --quiet
 ```cmd
 gcloud compute ssh juice-shop --internal-ip
 ```
+Press y three times enter then again press y
+
 
 # check my progress you will get 100/100
 ## Hurray you are done with the lab
